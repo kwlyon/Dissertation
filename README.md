@@ -5,7 +5,7 @@ This repository contains the LaTeX source for Kevin Wayne Lyon's Ph.D. dissertat
 The repository contains the source needed to rebuild the dissertation, including the local `uark` document class, chapter files, bibliography, figures, and plot data. Generated files and historical drafts are intentionally excluded.
 
 > [!IMPORTANT]
-> This is a working dissertation project, not an official University of Arkansas template. The header in `uark.cls` says that the class was matched to Graduate School requirements in Summer 2015. Requirements can change. Before submitting, compare the output with the current Graduate School formatting guide and obtain approval through the University's current dissertation review process.
+> This is a working dissertation project, not an official University of Arkansas template. The header in `uark.cls` says that the class was matched to Graduate School requirements in Summer 2015; however, this project produced a dissertation that was accepted by the University of Arkansas in 2026. That acceptance makes it a recent, successfully used example, but requirements can still change. Before submitting, compare the output with the current Graduate School formatting guide and obtain approval through the University's current dissertation review process.
 
 ## Building the dissertation
 
