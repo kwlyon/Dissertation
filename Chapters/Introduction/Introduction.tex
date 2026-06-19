@@ -1,0 +1,56 @@
+% ============================================================================
+% Chapter 1: Introduction
+% ============================================================================
+
+\graphicspath{{Chapters/Introduction/Figures/}}
+\pgfplotsset{table/search path={Chapters/Introduction/Figures}}
+
+\chapter{Introduction}
+\label{chap:NewIntroduction}
+
+\section{Context and Motivation}
+
+The dramatic slowing of structural dynamics in supercooled liquids as they approach the glass transition remains one of the central problems in condensed matter physics \cite{Ediger1996,Ediger2012}. Over a relatively narrow temperature interval, the characteristic structural (often referred to as $\alpha$) relaxation time, denoted $\tau_\alpha$, may increase by more than ten orders of magnitude while the liquid remains structurally disordered. Understanding how this slowdown emerges from molecular motion, how it evolves under varying thermodynamic conditions, and how it should be described across different materials remains a fundamental challenge in the physics of glass formation \cite{Berthier2011,Dyre2006}.
+
+A defining feature of this slowing is the emergence of broad, nonexponential relaxation behavior, commonly described by stretched exponential or Cole-Davidson models that will be discussed in detail in \chap \ref{chap:theory}. More fragile liquids generally exhibit broader relaxation spectra and stronger departures from single-exponential (Arrhenius) behavior, reflecting the presence of a wide distribution of relaxation mechanisms and reinforcing the view that structural relaxation in supercooled liquids is intrinsically heterogeneous and cooperative \cite{Bohmer1993}. 
+
+A convenient way to visualize this phenomenon is through an Angell plot, in which the logarithm of the structural relaxation time or viscosity is plotted as a function of inverse reduced temperature $T_g/T$. In this representation, liquids with widely differing glass transition temperatures may be compared on a common scale. Strong glass-forming liquids exhibit nearly Arrhenius behavior and appear approximately linear, whereas fragile systems display pronounced curvature as the glass transition is approached. Representative examples are shown in \fig~\ref{figure:AngellPlot}.
+
+The power of the Angell representation lies in its ability to compress an enormous dynamic range into a simple graphical form. As temperature decreases toward $T_g$, the structural relaxation time may increase from picoseconds to hundreds of seconds. In the conventional isobaric definition, the fragility is given by the steepness index
+
+\begin{equation}
+	m=\left.\frac{d\log_{10}\tau_\alpha}{d(T_g/T)}\right|_{T=T_g}
+	\label{eq:fragility}
+\end{equation}
+
+or equivalently through viscosity when $\eta$ is used in place of $\tau_\alpha$. This quantity is widely used to characterize how rapidly super-Arrhenius behavior develops as the glass transition is approached.
+
+At the same time, the Angell plot highlights an important limitation of the traditional framework. It is intrinsically isobaric. Each curve represents only a single thermodynamic path through a higher-dimensional space. While this representation enables direct comparison between materials, it does not describe how structural relaxation evolves under compression, nor does it resolve whether quantities such as fragility should be regarded as intrinsic material constants or as descriptors that depend on the thermodynamic path along which they are measured.
+
+This limitation becomes especially important at high pressure. Structural relaxation is fundamentally a function of both temperature and pressure--or more generally of free volume which is functionally dependent on pressure and temperature. From this perspective, the Angell plot may be interpreted as a one-dimensional slice through a broader relaxation-time surface $\tau_\alpha(P,T)$. Within such a framework, isochrones become contours on a thermodynamic surface, and quantities such as fragility may be interpreted as derivatives taken along specific paths through that surface.
+
+Direct experimental access to this broader picture, however, has been limited. Many of the most successful experimental probes of structural relaxation have historically been implemented at ambient pressure or under comparatively modest compression. At high pressure, measurements are typically carried out in diamond anvil cells, where the accessible sample volume is extremely small and anything beyond simple optical access is severely limited. These conditions make direct measurements of structural $\alpha$-relaxation exceptionally challenging. Yet it is precisely in this regime that pressure can qualitatively alter glassy dynamics and provide insight into the mechanisms governing the relaxation process.
+
+For this reason, a central need in the field is not merely improved extrapolation of existing low-pressure measurements, but direct experimental access to structural relaxation under extreme compression. This dissertation is motivated by that need. Its primary aim is to develop and apply methods capable of probing structural relaxation in glass-forming liquids at pressures within the gigapascal regime, and to interpret those measurements within a broader thermodynamic framework extending beyond traditional isobaric descriptions.
+
+\section{Contributions of This Work}
+
+The most significant contribution of this dissertation is the extension of depolarized photon correlation spectroscopy (DPCS) into a diamond anvil cell environment for the direct measurement of structural relaxation under high pressure. Depolarized photon correlation spectroscopy measures time-dependent fluctuations in the intensity of scattered light arising from molecular reorientation and structural relaxation processes in liquids. By analyzing the autocorrelation function of the scattered intensity, characteristic structural relaxation times may be determined directly in the time domain. Although photon correlation techniques have long been used at ambient pressure, their implementation within a diamond anvil cell presents substantial experimental challenges due to the extremely small scattering volume as well as the need for careful spatial filtering to isolate the desired signal from ever-present non-target optical splash arising from surface interfaces which complicate proper data analysis. In this work, these challenges were overcome through the development of an experimental configuration and process enabling reliable DPCS measurements in liquids compressed to pressures in the gigapascal regime.
+
+To the best of the author's knowledge, this work represents the first application of depolarized photon correlation spectroscopy to the direct measurement of structural $\alpha$-relaxation in a pure liquid contained within a diamond anvil cell. This experimental development provides a new capability for probing glassy dynamics under extreme compression and constitutes the primary contribution of the dissertation.
+
+A second major contribution of this work is the use of the \tgp protocol as an experimental constraint within the construction of pressure-dependent relaxation-time surfaces. The \tgp technique, developed previously in our laboratory and described in \sect \ref{sec:TGP}, determines an isochronal condition near the glass transition by systematically varying temperature under pressure to recover a locus of constant relaxation time. The \tgp method's incorporation into a surface-modeling framework provides an experimentally grounded constraint in the thermodynamic region near $T_g(P)$, where extrapolation is often least reliable and where meaningful characterization of relaxation behavior is most critical.
+
+Within this framework, literature viscosity measurements, isothermal pressure scans, and isochronal constraints are combined to construct continuous representations of structural relaxation across pressure--temperature space. Two representative glass-forming liquids are examined: glycerol, a hydrogen-bonded system, and cumene, a liquid dominated by van der Waals interactions. This combination allows the effects of compression on structural relaxation to be explored across distinct intermolecular interaction regimes.
+
+\section{Organization of the Dissertation}
+
+The remainder of this dissertation is organized as follows. Chapter~\ref{chap:Introduction} provides background on glass-forming liquids and the glass transition, including a survey of experimental probes used to investigate structural relaxation. It should be noted that this chapter was written with the uninitiated in mind.  Readers familiar with the literature regarding the study of glasses and their associated dynamics may wish to skip this chapter.  It was written with the new graduate student in mind who may find their first dive into the literature a bit daunting. Chapter~\ref{chap:theory} then develops the theoretical framework used throughout this work, introducing models for relaxation dynamics and the analysis of photon correlation data.  Though far more technical, as with the previous chapter, this is setting the stage for the contributions of this work and may be skipped by those comfortable with the underlying theory.
+
+Chapter~\ref{chap:Glycerol} marks the beginning of the primary contributions of this work, presenting the construction and analysis of a pressure-dependent relaxation-time surface for glycerol. Building on the classic Vogel--Tammann--Fulcher (VTF) formalism, this chapter develops an extended framework in which the temperature-dependent VTF parameters are promoted to pressure-dependent quantities. This is accomplished through a polynomial expansion, enabling the model to capture the evolution of relaxation dynamics under elevated pressure.
+
+By embedding the VTF description within a pressure-dependent surface representation, this approach provides a continuous and physically interpretable mapping of structural relaxation across combined temperature--pressure space. The resulting surface is further constrained by the isochrone determined through the previously discussed \tgp method and supplemented with literature viscosity data, ensuring consistency with established experimental observations. This framework represents an initial step toward a unified description of dynamics data obtained from multiple published studies, in many cases implementing different experimental probes.
+
+Chapter~\ref{chap:PCS} presents the central experimental contribution of this work: the development and implementation of high-pressure depolarized photon correlation spectroscopy (DPCS) within a diamond anvil cell. This chapter details the technical challenges associated with extending DPCS into the extreme-pressure regime, including low signal intensity, data analysis challenges associated with these low intensity signals, and the verification of homodyne and heterodyne conditions. 
+
+With these capabilities established, DPCS is applied to the direct measurement of structural $\alpha$-relaxation in cumene under pressures extending up to 2.5~GPa. These results establish DPCS in a diamond anvil cell as a viable and powerful probe of glassy dynamics under extreme pressure.

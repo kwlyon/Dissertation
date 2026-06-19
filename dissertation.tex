@@ -1,0 +1,149 @@
+% Currently dealing with citation consistancy end of sentence. [johton]. type stuff
+%Currently correcting Pg 91: The right side of figure
+% Notes:  Search for '*' before submission.
+
+\documentclass[12pt,oneside,final]{uark}
+\usepackage{amssymb}
+%\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{textgreek}
+\usepackage{setspace}
+\usepackage{readarray}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[version=4]{mhchem}
+
+\usepackage{url}
+\urlstyle{same}
+
+\usepackage[hidelinks]{hyperref}
+
+\usepackage[utf8]{inputenc}  % NOT latin1!
+\usepackage[autostyle]{csquotes}
+\usepackage[T1]{fontenc}
+\usepackage{nicefrac}
+
+%\usepackage{graphicx}
+%\usepackage{units}
+\usepackage{xspace}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{tikz}
+\usepackage{rotating}
+\usepackage{pgfplots,graphicx}
+\usepackage{pgfplotstable} 
+\usepackage{filecontents}
+\usepackage{mathrsfs}
+\usepackage{booktabs}
+\usepackage{csvsimple}
+\usepackage{siunitx}
+\usepackage{csvsimple}
+\usepackage{tabto}
+\usepackage{circuitikz}
+\usepackage{longtable}
+\usepackage[first=0, last=10]{lcg}
+\usetikzlibrary{positioning}
+\newcommand{\random}{\rand\arabic{rand}}
+\pgfplotsset{compat=newest}
+\usepackage{color}
+\DeclareSymbolFont{extraup}{U}{zavm}{m}{n}
+\DeclareMathSymbol{\vardiamond}{\mathalpha}{extraup}{87}
+\newcommand{\tikzcircle}[2][black,fill=black]{\tikz[baseline=-0.5ex]\draw[#1,radius=#2] (0,0) circle ;}%
+
+\usepgfplotslibrary{groupplots}
+\pgfplotsset{compat=1.18}
+
+
+\usepackage[pscoord]{eso-pic}% The zero point of the coordinate systemis the lower left corner of the page (the default).
+
+\newcommand{\placetextbox}[3]{% \placetextbox{<horizontal pos>}{<vertical pos>}{<stuff>}
+	\setbox0=\hbox{#3}% Put <stuff> in a box
+	\AddToShipoutPictureFG*{% Add <stuff> to current page foreground
+		\put(\LenToUnit{#1\paperwidth},\LenToUnit{#2\paperheight}){\vtop{{\null}\makebox[0pt][c]{#3}}}%
+	}%
+}%
+
+%Let's just make sure all these are done the same way
+\newcommand{\etal}{\textit{et al}.\@\xspace}
+\newcommand{\ie}{\textit{i}.\textit{e}.\@\xspace}
+\newcommand{\eg}{\textit{e}.\textit{g}.\@\xspace}
+\newcommand{\etc}{\textit{etc}.\@\xspace}
+\newcommand{\vs}{\textit{vs}.\@\xspace}
+\newcommand{\via}{\textit{via}\@\xspace}
+\newcommand{\eqn}{Eq.\protect\nolinebreak\@\xspace}
+\newcommand{\sect}{Sec.\protect\nolinebreak\@\xspace}
+\newcommand{\chap}{Ch.\protect\nolinebreak\@\xspace}
+\newcommand{\fig}{Fig.\protect\nolinebreak\@\xspace}
+\newcommand{\tbl}{Tbl.\protect\nolinebreak\@\xspace}
+\newcommand{\reference}{Ref.\protect\nolinebreak\@\xspace}
+\newcommand{\app}{App.\protect\nolinebreak\@\xspace}
+\newcommand{\exponential}[1]{\textit{e}^{#1}}
+\newcommand{\tgp}{$T_gP$\;}
+
+\input{Preamble/preamble}
+\input{Commands/commands}
+\newwrite\tempfile  
+
+\linespread{2}
+\usepackage[
+backend=biber,
+style=numeric,
+sorting=none,
+sortlocale=de_DE,
+natbib=true,
+url=false,
+doi=true,
+eprint=false
+]{biblatex}
+
+\addbibresource{Bibliography/bibliography.bib}
+
+% Bold journal volume for articles
+\DeclareFieldFormat[article]{volume}{\mkbibbold{#1}}
+
+% Put issue number in parentheses for articles
+\DeclareFieldFormat[article]{number}{\mkbibparens{#1}}
+
+% Print: Journal <space> Volume(Number), Pages (Year)
+\renewbibmacro*{journal+issuetitle}{%
+	\usebibmacro{journal}%
+	\setunit*{\addspace}%
+	\printfield{volume}%
+	\printfield{number}%
+	\setunit{\addcomma\space}%
+	\printfield{pages}%
+	\setunit{\addspace}%
+	\mkbibparens{\printdate}%
+	\newunit
+}
+
+% Suppress duplicate printing of pages in the standard article driver
+\renewbibmacro*{note+pages}{%
+	\printfield{note}%
+}
+
+\begin{document}
+	
+	\raggedbottom
+		
+%FRONT MATTER
+\include{Chapters/Front_matter/front_matter}
+\include{Chapters/Introduction/Introduction}
+\include{Chapters/Background/Background}
+\include{Chapters/MethodologyWorking/Theory}
+\include{Chapters/GlycerolWorking/Glycerol}
+\include{Chapters/PCSWorking/PCS}  %Temporarily changed to working folder while changes are made
+
+
+%\include{Chapters/Result2/Res2}
+%\include{Chapters/Instrumentation/instrument} //This was added to apppendix
+\include{Chapters/Conclusion/conclusion}
+
+%\bibliographystyle{ieeetr}
+ \printbibliography
+%BACK MATTER/APPENDICES
+
+
+%back matter are the microEP appendices
+ \include{Chapters/Back_matter/back_matter}
+
+\end{document}
