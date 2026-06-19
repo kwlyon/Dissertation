@@ -14,9 +14,6 @@
 *.toc
 *.xdv
 
-# Generated dissertation output
-/dissertation.pdf
-
 # Editor and operating-system files
 *.bak
 *.swp

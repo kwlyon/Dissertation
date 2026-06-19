@@ -2,7 +2,7 @@
 
 This repository contains the LaTeX source for Kevin Wayne Lyon's Ph.D. dissertation in physics at the University of Arkansas. It is also intended to be a practical example for other University of Arkansas graduate students who want to organize a long dissertation as a maintainable LaTeX project.
 
-The repository contains the source needed to rebuild the dissertation, including the local `uark` document class, chapter files, bibliography, figures, and plot data. Generated files and historical drafts are intentionally excluded.
+The repository contains the source needed to rebuild the dissertation, including the local `uark` document class, chapter files, bibliography, figures, and plot data. A compiled `dissertation.pdf` is included for convenient reading; other generated files and historical drafts are intentionally excluded.
 
 > [!IMPORTANT]
 > This is a working dissertation project, not an official University of Arkansas template. The header in `uark.cls` says that the class was matched to Graduate School requirements in Summer 2015; however, this project produced a dissertation that was accepted by the University of Arkansas in 2026. That acceptance makes it a recent, successfully used example, but requirements can still change. Before submitting, compare the output with the current Graduate School formatting guide and obtain approval through the University's current dissertation review process.
@@ -88,7 +88,7 @@ If the Graduate School requests a formatting change:
 
 - File names and LaTeX paths are case-sensitive on Linux and many online TeX systems. Keep capitalization consistent when renaming figures or directories.
 - The project uses many packages, including `biblatex`, `pgfplots`, `tikz`, `siunitx`, `mhchem`, `circuitikz`, and `fourier`. A minimal TeX installation may prompt for additional packages.
-- Build products such as `.aux`, `.bcf`, `.bbl`, `.log`, `.toc`, and the generated PDF are ignored by Git and can be regenerated.
+- Intermediate build products such as `.aux`, `.bcf`, `.bbl`, `.log`, and `.toc` are ignored by Git and can be regenerated. The final `dissertation.pdf` is intentionally tracked.
 - The dissertation's research text, figures, and data are included as a concrete example. Anyone adapting the structure should replace that content with their own work and independently confirm reuse permissions for any template or class code.
 
 ## Troubleshooting
